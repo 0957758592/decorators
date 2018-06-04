@@ -11,12 +11,14 @@ public class BufferedOutputStream extends OutputStream {
   private int index;
   private int size;
 
-  public BufferedOutputStream() {
+  public BufferedOutputStream(OutputStream outputStream) {
+    this(outputStream, INITIAL_CAPACITY);
 
   }
 
-  public BufferedOutputStream(OutputStream outputStream) {
+  public BufferedOutputStream(OutputStream outputStream, int size) {
     this.outputStream = outputStream;
+    this.size = size;
   }
 
   @Override
